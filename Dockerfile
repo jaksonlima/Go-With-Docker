@@ -3,7 +3,7 @@ WORKDIR /app
 COPY ./fullcycle.go ./
 RUN go build ./fullcycle.go
 
-FROM ubuntu:latest as runner
+FROM hello-world:linux as runner
 WORKDIR /app
 COPY --from=builder ./app/fullcycle ./ 
 
